@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+  traefik:
+    image: traefik
+    command: --web --docker --docker.domain=docker.localhost --logLevel=DEBUG --entryPoints='Name:http Address::80 Redirect.EntryPoint:https'
+    ports:
+      - "80:80"
+      - "443:443"
+      ## traefik dashboard
+      - "8080:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./traefik.toml:/etc/traefik/traefik.toml
+      - ./rules.toml:/etc/traefik/rules.toml
+      - ./acme:/acme
+
+#networks:
+#  custom_network:
+#    name: traefik
