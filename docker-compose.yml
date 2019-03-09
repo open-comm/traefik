@@ -15,6 +15,3 @@ services:
       - ./rules.toml:/etc/traefik/rules.toml
       - ./acme:/acme
 
-#networks:
-#  custom_network:
-#    name: traefik
