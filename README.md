@@ -20,7 +20,7 @@ Install
 
 ```
 # clone repository
-git clone
+git clone git@gitlab.wachter-jud.net:docker/traefik.git
 
 # copy and edit sample configuration files
 cd traefik
