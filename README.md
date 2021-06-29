@@ -1,5 +1,4 @@
-Traefik Web Proxy
-=================
+# Traefik Web Proxy
 
 Traefik is a reverse httpd proxy server.
 It automatically detects docker web servers, directs traffic towards them
@@ -10,29 +9,28 @@ Traefik documentation: https://docs.traefik.io
 
 This is a ready to use docker-compose configuration with the following features:
 
-* automated web proxy for all docker web services in this gitlab project ( https://gitlab.wachter-jud.net/docker )
+* automated web proxy for all docker web services in this gitlab project ( https://gitlab.open-communication.net/docker )
 * automatic http to https redirection
 * automated Let's encrypt https certificate creation for all web services
 
 
-Install
--------
+## Install
 
 ```
 # clone repository
-git clone git@gitlab.wachter-jud.net:docker/traefik.git
+git clone https://git.open-communication.net/open-communication/docker/traefik.git
 
-# copy and edit sample configuration files
+# move into directory
 cd traefik
-cp traefik.toml.sample traefik.toml
-cp rules.toml.sample rules.toml
 
-# edit email address in traefik.toml file
+# copy and edit environment file
+cp sample.env .env
+
+## edit email address in .env file
 ```
 
 
-Usage
------
+## Start & Stop Traefik Web Proxy
 
 ```
 # start traefik
